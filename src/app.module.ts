@@ -3,10 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 
-import { AppComponent } from './app.component';
+import { AppComponent } from './app/app.component';
 
-import { ApiService } from './shared';
-import { routing } from './app.routing';
+import { ApiService } from './services';
+import { routing } from './routes/app.routing';
 
 import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
 

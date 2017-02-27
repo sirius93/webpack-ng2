@@ -2,14 +2,14 @@
 :host {
   display: block;
 }
-
+$column: 50%;
 header {
   background-color: #fff;
   padding: 16px;
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: calc(2 * $column);
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
 }
 

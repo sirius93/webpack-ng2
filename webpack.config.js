@@ -5,6 +5,7 @@ var webpack = require('webpack');
 // Webpack Plugins
 var CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
 var autoprefixer = require('autoprefixer');
+var precss = require('precss');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
@@ -52,7 +53,6 @@ module.exports = function makeWebpackConfig() {
 
   /**
    * Output
-   * Reference: http://webpack.github.io/docs/configuration.html#output
    */
   config.output = isTest ? {} : {
     path: root('dist'),
@@ -186,7 +186,8 @@ module.exports = function makeWebpackConfig() {
         postcss: [
           autoprefixer({
             browsers: ['last 2 version']
-          })
+          }),
+          precss({})
         ]
       }
     })
@@ -201,7 +202,7 @@ module.exports = function makeWebpackConfig() {
 
       // Inject script and link tags into html files
       new HtmlWebpackPlugin({
-        template: './src/public/index.html',
+        template: './src/index.html',
         chunksSortMode: 'dependency'
       }),
 
